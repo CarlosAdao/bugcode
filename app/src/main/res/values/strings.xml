@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Snackbar</string>
+
+
+    <!-- String Login -->
+    <string name="til_username">Nome do usuário</string>
+    <string name="til_password">Senha</string>
+    <string name="btn_login">Login</string>
+    <string name="tv_info">Não tem conta? Cadastre-se</string>
+</resources>
