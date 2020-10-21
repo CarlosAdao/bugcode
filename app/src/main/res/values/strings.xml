@@ -7,4 +7,8 @@
     <string name="til_password">Senha</string>
     <string name="btn_login">Login</string>
     <string name="tv_info">Não tem conta? Cadastre-se</string>
+
+
+    <string name="first_fragment">Fragmento 1</string>
+    <string name="second_fragment">Fragmento 2</string>
 </resources>
