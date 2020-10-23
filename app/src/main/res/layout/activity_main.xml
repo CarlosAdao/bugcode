@@ -20,12 +20,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </FrameLayout>
-
         <include
             android:id="@+id/include"
             layout="@layout/login_top"
@@ -47,7 +41,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0">
-
         </FrameLayout>
 
         <LinearLayout
@@ -91,6 +84,15 @@
                 tools:layout_editor_absoluteX="10dp" />
 
         </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/flFragDetails"
+            android:layout_width="403dp"
+            android:layout_height="670dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
