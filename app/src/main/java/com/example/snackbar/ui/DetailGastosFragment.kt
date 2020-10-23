@@ -38,5 +38,4 @@ class DetailGastosFragment : Fragment() {
             }
         }
     }
-
 }

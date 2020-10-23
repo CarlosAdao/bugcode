@@ -111,7 +111,7 @@ class MainActivity : AppCompatActivity(), ContractMainActivity {
         }
     }
 
-    fun showToast(msg: String){
+    override fun showToast(msg: String){
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
     }
 
