@@ -6,23 +6,21 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.snackbar.R
 import com.example.snackbar.domain.Usuario
+import kotlinx.android.synthetic.main.activity_cadastro.*
+import kotlinx.android.synthetic.main.cadastro_body.*
+import kotlinx.android.synthetic.main.cadastro_body.edPassword
+import kotlinx.android.synthetic.main.cadastro_body.edUserName
 import kotlinx.android.synthetic.main.login_body.*
 
-class LoginActivity : AppCompatActivity() {
+
+class CadastroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_cadastro)
 
-        //Click in button login
-        btnLogin.setOnClickListener{
-            callMain(getInformationUser())
-        }
-
-        //Click in textView cadastrar
-        tvCadastrar.setOnClickListener{
-            callCadastro()
-        }
-
+       btn_cadastrar.setOnClickListener {
+           callMain(getInformationUser())
+       }
     }
 
     //Pega as informações do usuario
@@ -37,12 +35,6 @@ class LoginActivity : AppCompatActivity() {
     fun callMain(usuario: Usuario){
         var intent = Intent(this, MainActivity::class.java)
         intent.putExtra("key", usuario)
-        startActivity(intent)
-    }
-
-    //Chama CadastroActivity
-    fun callCadastro(){
-        var intent = Intent(this, CadastroActivity::class.java)
         startActivity(intent)
     }
 }

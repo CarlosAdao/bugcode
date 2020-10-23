@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Snackbar</string>
+    <string name="app_name">MyWallet</string>
 
 
     <!-- String Login -->
@@ -11,4 +11,13 @@
 
     <string name="first_fragment">Fragmento 1</string>
     <string name="second_fragment">Fragmento 2</string>
+    <string name="titleCadastrar">Cadastrar</string>
+    <string name="tilEmail">E-mail</string>
+    <string name="tilConfirmPassword">Confirmar senha</string>
+    <string name="btnCadastrar">Cadastrar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tv_home">Home</string>
+    <string name="tvEntrada">Entradas</string>
+    <string name="tvGasto">Gastos</string>
 </resources>

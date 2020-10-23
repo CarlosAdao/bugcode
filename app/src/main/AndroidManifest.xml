@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.CadastroActivity"></activity>
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".CadastroActivity" />
+        <activity android:name=".ui.CadastroActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.LoginActivity" />
+        </activity>
         <activity
             android:name=".ui.LoginActivity"
             android:windowSoftInputMode="adjustResize">

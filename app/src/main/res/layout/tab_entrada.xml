@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <LinearLayout
+        android:id="@+id/llLinhaTabEntrada"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal"/>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="left">
+
+        <ImageView
+            android:id="@+id/icTabEntrada"
+            android:layout_width="31dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_entrada" />
+
+        <TextView
+            android:id="@+id/tvTabEntrada"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:textSize="16dp"
+            android:text="@string/tvEntrada"/>
+
+    </LinearLayout>
+</LinearLayout>
