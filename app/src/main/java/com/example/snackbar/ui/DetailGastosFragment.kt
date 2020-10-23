@@ -17,12 +17,10 @@ class DetailGastosFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         val view: View = inflater!!.inflate(R.layout.fragment_detail_gastos, container, false)
         view.tvTitleDetailGastos.text = msg
 
         return  view
-
     }
 
     override fun onAttach(context: Context) {
