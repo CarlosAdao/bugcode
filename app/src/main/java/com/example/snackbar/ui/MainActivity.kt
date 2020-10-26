@@ -1,6 +1,5 @@
 package com.example.snackbar.ui
 
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -23,10 +22,11 @@ class MainActivity : AppCompatActivity(), ContractMainActivity {
         setContentView(R.layout.activity_main)
 
         //Comeca com o fragment entrada setado
+        alterColorEntrada(R.color.colorSelected)
         callFragEntrada()
 
         //Evento click tab Home
-        tabHame.setOnClickListener{
+        tabHame.setOnClickListener {
             //Seleciona a tab home
             alterColorEntrada(R.color.colorWhite)
             alterColorHome(R.color.colorSelected)
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity(), ContractMainActivity {
         }
 
         //Evento click tab Entrada
-        tabEntrada.setOnClickListener{
+        tabEntrada.setOnClickListener {
             alterColorEntrada(R.color.colorSelected)
             alterColorHome(R.color.colorWhite)
             alterColorGasto(R.color.colorWhite)
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity(), ContractMainActivity {
         }
 
         //Evento click tab Gastos
-        tabGastos.setOnClickListener{
+        tabGastos.setOnClickListener {
             alterColorEntrada(R.color.colorWhite)
             alterColorHome(R.color.colorWhite)
             alterColorGasto(R.color.colorSelected)
@@ -54,17 +54,17 @@ class MainActivity : AppCompatActivity(), ContractMainActivity {
         showToast("Bem Vindo ${usuario!!.userName}")
         Log.i(TAG, usuario.toString())
 
-        alterColorEntrada(R.color.colorSelected)
+
     }
 
-    fun alterColorHome(idCor: Int){
+    fun alterColorHome(idCor: Int) {
         llLinhaTabHome.setBackgroundColor(ContextCompat.getColor(this, idCor));
         tvTabHome.setTextColor(ContextCompat.getColor(this, idCor));
         icTabHome.setColorFilter(ContextCompat.getColor(this, idCor));
     }
 
     //Coloca o fragment Home na pilha
-    fun callFragHome(){
+    fun callFragHome() {
         val fragHome = HomeFragment.newInstance()
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.flFragment, fragHome)
@@ -72,14 +72,14 @@ class MainActivity : AppCompatActivity(), ContractMainActivity {
         }
     }
 
-    fun alterColorEntrada(idCor: Int){
+    fun alterColorEntrada(idCor: Int) {
         llLinhaTabEntrada.setBackgroundColor(ContextCompat.getColor(this, idCor));
         tvTabEntrada.setTextColor(ContextCompat.getColor(this, idCor));
         icTabEntrada.setColorFilter(ContextCompat.getColor(this, idCor));
     }
 
     //Coloca o fragment Entrada na pilha
-    fun callFragEntrada(){
+    fun callFragEntrada() {
         val fragEntrada = EntradaFragment.newInstance()
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.flFragment, fragEntrada)
@@ -87,14 +87,14 @@ class MainActivity : AppCompatActivity(), ContractMainActivity {
         }
     }
 
-    fun alterColorGasto(idCor: Int){
+    fun alterColorGasto(idCor: Int) {
         llLinhaTabGasto.setBackgroundColor(ContextCompat.getColor(this, idCor));
         tvTabGasto.setTextColor(ContextCompat.getColor(this, idCor));
         icTabGasto.setColorFilter(ContextCompat.getColor(this, idCor));
     }
 
     //Coloca o fragment Gastos na pilha
-    fun callFragGastos(){
+    fun callFragGastos() {
         val fragGasto = GastosFragment.newInstance()
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.flFragment, fragGasto)
@@ -103,15 +103,15 @@ class MainActivity : AppCompatActivity(), ContractMainActivity {
     }
 
     //Coloca o fragment Details Gastos na pilha
-    override fun callFragDetailGastos(){
-        val fragDetailGastos = DetailGastosFragment.newInstance("Lista de Gastos")
+    override fun callFragDetailGastos() {
+        val fragDetailGastos = DetailGastosFragment.newInstance(1)
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.flFragDetails, fragDetailGastos)
             commit()
         }
     }
 
-    override fun showToast(msg: String){
+    fun showToast(msg: String) {
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
     }
 

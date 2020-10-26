@@ -11,30 +11,30 @@ import kotlinx.android.synthetic.main.fragment_detail_gastos.view.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
 
 class DetailGastosFragment : Fragment() {
-    private var msg = ""
+    private var msg = 1
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view: View = inflater!!.inflate(R.layout.fragment_detail_gastos, container, false)
-        view.tvTitleDetailGastos.text = msg
+        view.tvTitleDetailGastos.text = msg.toString()
 
         return  view
     }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-            arguments?.getString("key")?.let {
+            arguments?.getInt("key")?.let {
                 msg = it
         }
     }
 
     companion object{
         @JvmStatic
-        fun newInstance(msg: String) = DetailGastosFragment().apply {
+        fun newInstance(msg: Int) = DetailGastosFragment().apply {
             arguments = Bundle().apply {
-                putString("key", msg)
+                putInt("key", msg)
             }
         }
     }
