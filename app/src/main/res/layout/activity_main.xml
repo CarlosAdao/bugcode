@@ -1,101 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.LoginActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ui.LoginActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/homeToolbar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@drawable/ic_arrow_back"
-        app:title="@string/app_name"
-        app:titleTextColor="@color/colorWhite" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <include
-            android:id="@+id/include"
-            layout="@layout/login_top"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/homeToolbar"
             android:layout_width="match_parent"
-            android:layout_height="290dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="10dp" />
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/colorWhite" />
 
-        <FrameLayout
-            android:id="@+id/flFragment"
-            android:layout_width="395dp"
-            android:layout_height="487dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/round_login_body"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.68"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0">
-        </FrameLayout>
-
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="@+id/flFragment"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.071"
-            tools:layout_editor_absoluteX="1dp">
+            android:layout_height="match_parent">
 
             <include
-                android:id="@+id/tabHame"
-                layout="@layout/tab_home"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_marginLeft="10dp"
-                android:layout_height="wrap_content"
+                android:id="@+id/include"
+                layout="@layout/login_top"
+                android:layout_width="match_parent"
+                android:layout_height="290dp"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:layout_editor_absoluteX="10dp" />
 
-            <include
-                android:id="@+id/tabEntrada"
-                layout="@layout/tab_entrada"
+            <FrameLayout
+                android:id="@+id/flFragment"
                 android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_marginLeft="10dp"
-                android:layout_height="wrap_content"
+                android:layout_height="550dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/round_login_body"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="10dp" />
+                app:layout_constraintVertical_bias="1.0"></FrameLayout>
 
-            <include
-                android:id="@+id/tabGastos"
-                layout="@layout/tab_gastos"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_height="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/flFragment"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="10dp" />
+                app:layout_constraintVertical_bias="0.071"
+                tools:layout_editor_absoluteX="1dp">
 
-        </LinearLayout>
+                <include
+                    android:id="@+id/tabHame"
+                    layout="@layout/tab_home"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="10dp" />
 
-        <FrameLayout
-            android:id="@+id/flFragDetails"
-            android:layout_width="403dp"
-            android:layout_height="670dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                <include
+                    android:id="@+id/tabEntrada"
+                    layout="@layout/tab_entrada"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="10dp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <include
+                    android:id="@+id/tabGastos"
+                    layout="@layout/tab_gastos"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="10dp" />
 
+            </LinearLayout>
 
-</LinearLayout>
+            <FrameLayout
+                android:id="@+id/flFragDetails"
+                android:layout_width="403dp"
+                android:layout_height="670dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</ScrollView>
