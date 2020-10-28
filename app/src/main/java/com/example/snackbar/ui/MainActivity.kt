@@ -1,8 +1,11 @@
 package com.example.snackbar.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.example.snackbar.R
@@ -20,6 +23,10 @@ class MainActivity : AppCompatActivity(), ContractMainActivity {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //Adicionando o toolbar
+        setSupportActionBar(findViewById(R.id.homeToolbar))
+
 
         //Comeca com o fragment entrada setado
         alterColorEntrada(R.color.colorSelected)
@@ -54,7 +61,25 @@ class MainActivity : AppCompatActivity(), ContractMainActivity {
         showToast("Bem Vindo ${usuario!!.userName}")
         Log.i(TAG, usuario.toString())
 
+    }
 
+    //Inflando o menu
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menu_home, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    //Evento de click no menu
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle presses on the action bar menu items
+        when (item.itemId) {
+            R.id.icProfile -> {
+                callProfileActivity()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     fun alterColorHome(idCor: Int) {
@@ -113,6 +138,18 @@ class MainActivity : AppCompatActivity(), ContractMainActivity {
 
     fun showToast(msg: String) {
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
+    }
+
+    //Inicia a activity de profile
+    fun callProfileActivity(){
+        var intent = Intent(this, ProfileActivity::class.java)
+        intent.putExtra("bundle", Bundle().apply {
+            putString("nome", "Carlos Adão")
+            putDouble("peso", 68.0)
+            putInt("idade", 31)
+            putBoolean("titular", true)
+        })
+        startActivity(intent)
     }
 
 }

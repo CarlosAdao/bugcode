@@ -20,4 +20,6 @@
     <string name="tv_home">Home</string>
     <string name="tvEntrada">Entradas</string>
     <string name="tvGasto">Gastos</string>
+    <string name="legProfile">Profile</string>
+    <string name="til_descr">Descrição</string>
 </resources>
