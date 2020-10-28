@@ -3,22 +3,32 @@ package com.example.snackbar.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.snackbar.R
+import kotlinx.android.synthetic.main.activity_profile.*
 
 class ProfileActivity : AppCompatActivity() {
+
+    private lateinit var navController: NavController
+    private  lateinit var appBarConfiguration: AppBarConfiguration
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        //Obtém os valores que foram passados pelo bundle
-        val bundle :Bundle ?=intent.extras
-        if (bundle != null){
-            val nome = bundle.getString("nome")
-            val peso = bundle.getDouble("peso")
-            val idade = bundle.getInt("idade")
-            val titular = bundle.getBoolean("titular")
+        setSupportActionBar(profileToolbar)
 
-            Toast.makeText(this, bundle.toString(), Toast.LENGTH_SHORT).show()
-        }
+        navController = findNavController(R.id.navHostfragment)
+        appBarConfiguration = AppBarConfiguration(navController.graph)
+
+        setupActionBarWithNavController(navController, appBarConfiguration)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }

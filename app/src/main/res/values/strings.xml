@@ -22,4 +22,7 @@
     <string name="tvGasto">Gastos</string>
     <string name="legProfile">Profile</string>
     <string name="til_descr">Descrição</string>
+    <string name="ajuda">Ajuda</string>
+    <string name="tbProfile">Profile</string>
+    <string name="legAjuda">Ajuda</string>
 </resources>
