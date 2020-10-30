@@ -14,7 +14,6 @@
         android:background="@color/colorAccent"
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/ic_arrow_back"
-        app:title="@string/tbProfile"
         app:titleTextColor="@color/colorWhite" />
 
     <fragment
