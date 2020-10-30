@@ -17,9 +17,11 @@ class GastosFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view: View = inflater!!.inflate(R.layout.fragment_gasto, container, false)
+
         view.btnCadastrarGasto.setOnClickListener {
             showToast(getDataEdt(view))
         }
+
         return  view
     }
 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/profileFragment">
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.snackbar.ui.ProfileFragment"
+        android:label="@string/legProfile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_ajudaFragment"
+            app:destination="@id/ajudaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ajudaFragment"
+        android:name="com.example.snackbar.ui.AjudaFragment"
+        android:label="@string/legAjuda"
+        tools:layout="@layout/fragment_ajuda" />
+</navigation>
